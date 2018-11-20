@@ -4,16 +4,17 @@ db = connector.connect(host="localhost",user="root",passwd="root",database="pyth
 mycursor = db.cursor()
 
 # mycursor.execute("select * from products limit 34")
-#
-#
+# #
+# #
 # results=mycursor.fetchall()
 #
 # for product in results:
 #     print(product[1])
-sql = "INSERT INTO products (name, quantity) VALUES (%s, %s)"
-val = ("Tissue", "21")
-mycursor.execute(sql, val)
+
+sql = "UPDATE products SET name = 'Tissue' WHERE ID = '1'"
+
+mycursor.execute(sql)
 
 db.commit()
 
-print(mycursor.rowcount, "record inserted.")
+print(mycursor.rowcount, "Record UPDATED.")
