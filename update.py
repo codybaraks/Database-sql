@@ -11,10 +11,13 @@ mycursor = db.cursor()
 # for product in results:
 #     print(product[1])
 
-sql = "UPDATE products SET name = 'Tissue' WHERE ID = '1'"
+sql = "UPDATE products SET name ='Tissue'  WHERE id = '1'"
+
+# sql2 = "SELECT * FROM products WHERE name LIKE 'a%'"
 
 mycursor.execute(sql)
 
-db.commit()
 
+
+db.commit()
 print(mycursor.rowcount, "Record UPDATED.")

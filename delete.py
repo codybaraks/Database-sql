@@ -8,13 +8,17 @@ mycursor.execute("select * from products limit 34")
 #
 results=mycursor.fetchall()
 #
-for product in results:
-    print(product[1])
+# for product in results:
+#     print(product[1])
 
-sql = "DELETE FROM products WHERE name= 'Tissue'"
+name = input("Enter item to Delete")
 
-mycursor.execute(sql)
+if name == 'Cassis':
 
-db.commit()
+    sql = "DELETE FROM products WHERE name =%s"
+
+    mycursor.execute(sql, (name,))
+
+    db.commit()
 
 print(mycursor.rowcount, "Record Deleted.")

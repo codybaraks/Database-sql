@@ -3,7 +3,7 @@ db = connector.connect(host="localhost",user="root",passwd="root",database="pyth
 
 mycursor= db.cursor()
 
-mycursor.execute("select * from students limit 100")
+mycursor.execute("select * from students WHERE names LIKE 'C%'")
 
 # one = mycursor.fetchone()
 #

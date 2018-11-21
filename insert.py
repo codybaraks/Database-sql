@@ -10,8 +10,12 @@ mycursor = db.cursor()
 #
 # for product in results:
 #     print(product[1])
-sql = "INSERT INTO products (name, quantity) VALUES (%s, %s)"
-val = ("Tissue", "21")
+
+name = input("Enter the name of the product:")
+quantity = int(input("Enter product Quantity:"))
+price = int(input("Enter the price of the product:"))
+sql = "INSERT INTO products (name, quantity, price) VALUES (%s, %s,%s)"
+val = (name, quantity, price)
 mycursor.execute(sql, val)
 
 db.commit()
